@@ -6,11 +6,13 @@
  */
 function nestedForLoops(depth, width = depth) {
   let result = "\n";
-  for (let i = 0; i < depth; i++) {
-    for (let j = 0; j < width; j++) {
-      result += `{x:${j}, y:${i}}, `;
+  for (let y = 0; y < depth; y++) {
+    for (let x = 0; x < width; x++) {
+      result += `{x:${x}, y:${y}}`;
+      if (x < width - 1) {
+        result += ", ";
+      }
     }
-    result = result.slice(0, result.length - 2);
     result += "\n";
   }
   return result;
